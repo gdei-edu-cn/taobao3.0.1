@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>我的请假凭证</title>
+    
+</head>
+<body>
+    <!-- 输入信息区域 -->
+    <form class="inputWrapper" action="javascript:;">
+        <table class="inputTable">
+            <tr>
+                <td>姓名：</td>
+                <td><input class="name" type="text"></td>
+            </tr>
+            <tr>
+                <td>院系：</td>
+                <td><input class="department" type="text"></td>
+            </tr>
+            <tr>
+                <td>学号：</td>
+                <td><input class="sNumber" type="text"></td>
+            </tr>
+            <tr>
+                <td>班级：</td>
+                <td><input class="class1" type="text"></td>
+            </tr>
+            <tr>
+                <td>离校时间：</td>
+                <td>
+                    <input placeholder="请输入日期" class="laydate-icon" id="startTime">
+                </td>
+            </tr>
+            <tr>
+                <td>返校时间：</td>
+                <td>
+                    <input placeholder="请输入日期" class="laydate-icon" id="endTime">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>
+                        <input class="goOut" name="goOut" type="radio" value="离校" />
+                        离校
+                    </label> 
+                    <label>
+                        <input class="comeIn" name="goOut" type="radio" value="进校" />
+                        进校
+                    </label>
+                </td>
+            </tr>
+        </table>
+        <button class="submitBtn">提交</button>
+    </form>
+
+    <!-- 二维码显示区域 -->
+    <div class="qrCode clearfix">
+        <div class="qrCodeWrapper clearfix">
+            <div class="qrTiltle">
+                广东二师请假审批通过凭证
+            </div>
+            <div class="qrLeft">
+                <span class="newName">张三</span>
+                <span class="newDep">幼儿园学院</span>
+                <span class="newNum">13800138000</span>
+                <span class="newClass">22幼儿园大班</span>
+            </div>
+            <div class="qrRight">
+                <span class="newText">请假起止时间：</span>
+                <span class="newSTime">2021年5月1日18时-</span>
+                <span class="newETime">2021年5月1日18时</span>
+                <img src="./img/code.png" alt="">
+            </div>
+            <div class="qrBottom">
+                离校
+            </div>
+        </div>
+    </div>
+
+    <div class="footerText">
+        <span>逃宝v3.0.1</span>
+        <br>
+        <span>@网易云工作室</span>
+    </div>
+    
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/laydate-v1.1/laydate/laydate.js"></script>
+    <script>
+        // 自适应移动端
+        window.onload = function(){
+            document.documentElement.style.fontSize = document.documentElement.clientWidth/10 + 'px';
+            window.onresize = function(){
+                document.documentElement.style.fontSize = document.documentElement.clientWidth/10 + 'px';
+            }
+        }
+
+
+        // window.onload = function(){
+            // 弹窗警告
+            let warnText = '本程序仅供学习参考，切勿违法使用，因个人违规使用所造成的违法行为与开发者无关，您确定还要继续使用吗？'
+            
+            confirm(warnText)
+
+            // 日期控件
+            ;!function(){
+                // laydate.skin('molv');    切换颜色
+                laydate.skin('molv');
+
+                laydate({
+                    elem:'#startTime',
+                    format: 'YYYY/MM/DD hh:mm:ss',
+                    istime: true,
+                })
+
+                laydate({
+                    elem:'#endTime',
+                    format: 'YYYY/MM/DD hh:mm:ss',
+                    istime: true,
+                })
+            }()
+
+            // 隐藏输入信息区域
+            $('.submitBtn').click(() => {
+                $('.inputWrapper').css('display','none')
+                $('.qrCode').css('display','block')
+
+
+                // 获取输入信息
+                let name = $('.name').val()
+                let department = $('.department').val()
+                let sNumber = $('.sNumber').val()
+                let class1 = $('.class1').val()
+                let startTime = $('#startTime').val()
+                let endTime = $('#endTime').val()
+                let goOrCome = $("input[name='goOut']:checked").val()
+
+                /* 
+                    2021/09/15 17:00:00
+                    2021年9月15日17时-
+                */
+                let year = startTime.split('/')[0] * 1
+                let month = startTime.split('/')[1] * 1
+                let day = startTime.split('/')[2].split(' ')[0] * 1
+                let hour = startTime.split('/')[2].split(' ')[1].split(':')[0] * 1
+                let newStartTime = `${year}年${month}月${day}日${hour}时-`
+                let year2 = endTime.split('/')[0] * 1
+                let month2 = endTime.split('/')[1] * 1
+                let day2 = endTime.split('/')[2].split(' ')[0] * 1
+                let hour2 = endTime.split('/')[2].split(' ')[1].split(':')[0] * 1
+                let newEndTime = `${year2}年${month2}月${day2}日${hour2}时`
+                console.log(newStartTime,newEndTime);
+            
+                $('.newName').html(name)
+                $('.newDep').html(department)
+                $('.newNum').html(sNumber)
+                $('.newClass').html(class1)
+                $('.newSTime').html(newStartTime)
+                $('.newETime').html(newEndTime)
+                $('.qrBottom').html(goOrCome)
+
+                
+            })
+
+        // }
+
+    </script>
+</body>
+</html>
