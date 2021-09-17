@@ -1,0 +1,138 @@
+@font-size: (375/10rem);
+html,body{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(white,pink);
+    overflow: hidden;
+}
+
+// 输入信息区域
+.inputWrapper{
+    
+    
+    // display: none;
+
+    margin: 0 auto;
+    width: 78%;
+    height: 78%;
+    font-size: 16/@font-size;
+
+    .inputTable{
+        margin: 0 auto;
+        margin-top: 50/@font-size;
+        width: 100%;
+        height: 50%;
+        tr{
+            margin: 10/@font-size ;
+        }
+    }
+
+    .submitBtn{
+        
+        margin: 0 auto;
+        display: block;
+        margin-top: 20/@font-size;
+    }
+}
+
+// 二维码显示区域
+.qrCode{
+
+    display: none;
+
+    background-color: #F3F3F3;
+    width: 100%;
+    height: 100%;
+    .qrCodeWrapper{
+        position: relative;
+        width: 80%;
+        height: 64%;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 10%;
+        border: 1/@font-size solid #DADADA;
+        box-shadow: 0/@font-size 0/@font-size 3/@font-size #DADADA;
+        .qrTiltle{
+            box-sizing: border-box;
+            height: 13%;
+            width: 100%;
+            font-size: 19/@font-size;
+            color: #565B5E;
+            padding: 15/@font-size;
+            // padding-bottom: 25/@font-size;
+            border-bottom: 1/@font-size solid #DADADA;
+        }
+    }
+    .qrLeft{
+        box-sizing: border-box;
+        width: 45%;
+        height: 54%;
+        float: left;
+        color: #5C6EA7;
+        font-size: 15/@font-size;
+        margin-top: 15/@font-size;
+        border-right: 1/@font-size solid #DADADA;
+        span{
+            display: block;
+            width: 55%;
+            margin: 0 auto;
+            line-height: 20/@font-size;
+            border-bottom: 1/@font-size solid #DADADA;
+            margin-bottom: 22/@font-size;
+            padding-bottom: 5/@font-size;
+        }
+        .newName{
+            padding-top: 5/@font-size;
+        }
+    }
+    .qrRight{
+        box-sizing: border-box;
+        width: 55%;
+        height: 54%;
+        float: left;
+        color: #66686A;
+        font-size: 14/@font-size;
+        padding-left: 16/@font-size;
+        margin-top: 10/@font-size;
+        span{
+            display: inline-block;
+            font-size: 13/@font-size;
+            line-height: 29/@font-size;
+        }
+        img{
+            margin-top: 7/@font-size;
+            width: 80%;
+            height: 48%;
+        }
+    }
+    .qrBottom{
+        font-size: 30/@font-size;
+        color: #666A6D;
+        // padding: 10/@font-size;
+        padding: 50/@font-size 0 10/@font-size 8/@font-size;
+        border-top: 1/@font-size solid #DADADA;
+        position: absolute;
+        bottom: 10/@font-size;
+        left: 8/@font-size;
+        // margin-left: /@font-size;
+        width: 92%;
+    }
+}
+
+// 脚注
+.footerText{
+    font-size: 10/@font-size;
+    margin: 0 auto;
+    text-align: center;
+    span{
+        line-height: 15/@font-size;
+    }
+}
+
+// 清除浮动
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}

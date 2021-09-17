@@ -1,0 +1,118 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(white, pink);
+  overflow: hidden;
+}
+.inputWrapper {
+  margin: 0 auto;
+  width: 78%;
+  height: 78%;
+  font-size: 0.42666667rem;
+}
+.inputWrapper .inputTable {
+  margin: 0 auto;
+  margin-top: 1.33333333rem;
+  width: 100%;
+  height: 50%;
+}
+.inputWrapper .inputTable tr {
+  margin: 0.26666667rem;
+}
+.inputWrapper .submitBtn {
+  margin: 0 auto;
+  display: block;
+  margin-top: 0.53333333rem;
+}
+.qrCode {
+  display: none;
+  background-color: #F3F3F3;
+  width: 100%;
+  height: 100%;
+}
+.qrCode .qrCodeWrapper {
+  position: relative;
+  width: 80%;
+  height: 64%;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 10%;
+  border: 0.02666667rem solid #DADADA;
+  box-shadow: 0rem 0rem 0.08rem #DADADA;
+}
+.qrCode .qrCodeWrapper .qrTiltle {
+  box-sizing: border-box;
+  height: 13%;
+  width: 100%;
+  font-size: 0.50666667rem;
+  color: #565B5E;
+  padding: 0.4rem;
+  border-bottom: 0.02666667rem solid #DADADA;
+}
+.qrCode .qrLeft {
+  box-sizing: border-box;
+  width: 45%;
+  height: 54%;
+  float: left;
+  color: #5C6EA7;
+  font-size: 0.4rem;
+  margin-top: 0.4rem;
+  border-right: 0.02666667rem solid #DADADA;
+}
+.qrCode .qrLeft span {
+  display: block;
+  width: 55%;
+  margin: 0 auto;
+  line-height: 0.53333333rem;
+  border-bottom: 0.02666667rem solid #DADADA;
+  margin-bottom: 0.58666667rem;
+  padding-bottom: 0.13333333rem;
+}
+.qrCode .qrLeft .newName {
+  padding-top: 0.13333333rem;
+}
+.qrCode .qrRight {
+  box-sizing: border-box;
+  width: 55%;
+  height: 54%;
+  float: left;
+  color: #66686A;
+  font-size: 0.37333333rem;
+  padding-left: 0.42666667rem;
+  margin-top: 0.26666667rem;
+}
+.qrCode .qrRight span {
+  display: inline-block;
+  font-size: 0.34666667rem;
+  line-height: 0.77333333rem;
+}
+.qrCode .qrRight img {
+  margin-top: 0.18666667rem;
+  width: 80%;
+  height: 48%;
+}
+.qrCode .qrBottom {
+  font-size: 0.8rem;
+  color: #666A6D;
+  padding: 1.33333333rem 0 0.26666667rem 0.21333333rem;
+  border-top: 0.02666667rem solid #DADADA;
+  position: absolute;
+  bottom: 0.26666667rem;
+  left: 0.21333333rem;
+  width: 92%;
+}
+.footerText {
+  font-size: 0.26666667rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.footerText span {
+  line-height: 0.4rem;
+}
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
